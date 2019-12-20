@@ -1,0 +1,62 @@
+/* pages/userInfo/userInfo.wxss */
+.background{
+  background-color: #fff;
+  padding-bottom: 30rpx;
+}
+.input_box{
+  margin: 0 20rpx;
+  border-bottom: 1px solid rgb(245, 245, 245);
+  position: relative;
+}
+.input_box:nth-last-child(1){
+  border-bottom: none;
+}
+.input_box .van-cell{
+  padding:10px 0 !important;
+}
+.input_box .van-cell .van-cell__value{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.input_box image{
+  position: absolute;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+}
+.input_box button{
+  position: absolute;
+  top: 0;
+  height: 44px;
+  width: 100%;
+}
+.input_box van-cell{
+  width:-webkit-calc(100% - 25px); 
+  width:-moz-calc(100% - 25px); 
+  width:calc(100% - 25px);
+  float: right;
+}
+.textarea{
+  display: block;
+  min-height: 100px;
+  padding: 0 4px;
+  color: rgb(134, 134, 134);
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid rgb(245, 245, 245);
+}
+.footer{
+  position: fixed;
+  bottom: 20rpx;
+  width: 100%;
+}
+.footer .button_box{
+  margin: 0 30rpx;
+}
+.footer van-button .van-button{
+  width: 100%;
+  background-color: #7122ef !important;
+  color: #fff;
+  border: none;
+}

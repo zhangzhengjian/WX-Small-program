@@ -1,0 +1,97 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/manage/manage",
+    "pages/information/information",
+    "pages/add/add",
+    "pages/user/user",
+    "pages/citySelect/citySelect",
+    "pages/detail/detail",
+    "pages/address/address",
+    "pages/userInfo/userInfo",
+    "pages/lable/lable",
+    "pages/search/search",
+    "pages/follow/follow",
+    "pages/personal-space/personal-space",
+    "pages/wait-approve/wait-approve",
+    "pages/all-activity/all-activity",
+    "pages/examine/examine",
+    "pages/notice/notice",
+    "pages/already-signup/already-signup",
+    "pages/activity-member/activity-member",
+    "pages/system-info/system-info",
+    "pages/upload-photo/upload-photo",
+    "pages/photo-album/photo-album",
+    "pages/subscribe/subscribe",
+    "pages/edit/edit",
+    "pages/setting/setting",
+    "component/card-com/card-com",
+    "component/time-select/time-select",
+    "component/form-com/form-com"
+  ],
+  "permission":{
+    "scope.userLocation":{
+      "desc":"应用需要获取你的地址位置"
+    }
+  },
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "活动小程序",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#919191",
+    "selectedColor": "#7122ef",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_active.png"
+      },
+      {
+        "pagePath": "pages/manage/manage",
+        "text": "管理",
+        "iconPath": "images/classification.png",
+        "selectedIconPath": "images/classification_active.png"
+      },
+      {
+        "pagePath": "pages/information/information",
+        "text": "信息",
+        "iconPath": "images/information.png",
+        "selectedIconPath": "images/information_active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-icon": "/miniprogram_npm/vant-weapp/icon/index",
+    "van-row": "/miniprogram_npm/vant-weapp/row/index",
+    "van-col": "/miniprogram_npm/vant-weapp/col/index",
+    "van-search": "/miniprogram_npm/vant-weapp/search/index",
+    "van-tab": "/miniprogram_npm/vant-weapp/tab/index",
+    "van-tabs": "/miniprogram_npm/vant-weapp/tabs/index",
+    "van-button": "/miniprogram_npm/vant-weapp/button/index",
+    "van-cell": "/miniprogram_npm/vant-weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/vant-weapp/cell-group/index",
+    "van-field": "/miniprogram_npm/vant-weapp/field/index",
+    "van-action-sheet": "/miniprogram_npm/vant-weapp/action-sheet/index",
+    "van-datetime-picker": "/miniprogram_npm/vant-weapp/datetime-picker/index",
+    "van-dialog": "/miniprogram_npm/vant-weapp/dialog/index",
+    "van-collapse": "/miniprogram_npm/vant-weapp/collapse/index",
+    "van-collapse-item": "/miniprogram_npm/vant-weapp/collapse-item/index",
+    "van-popup": "/miniprogram_npm/vant-weapp/popup/index",
+    "van-toast": "/miniprogram_npm/vant-weapp/toast/index"
+  }
+}

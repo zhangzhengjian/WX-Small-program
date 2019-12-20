@@ -1,0 +1,6 @@
+<!--component/time-select.wxml-->
+<van-action-sheet show="{{ propA }}" close-on-click-overlay="{{true}}" bind:close="cancelTimeSelect">
+  <view>
+    <van-datetime-picker active-class="active_datetime" toolbar-class="toolbar_datetime" type="{{ propC }}" value="{{ propB.currentDate }}" min-date="{{ propB.minDate }}" max-date="{{ propB.maxDate }}" bind:cancel="cancelTimeSelect" bind:confirm="confirmTimeSelect" />
+  </view>
+</van-action-sheet>

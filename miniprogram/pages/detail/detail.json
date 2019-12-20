@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-count-down": "/miniprogram_npm/vant-weapp/count-down/index"
+  },
+  "navigationBarTitleText": "活动详情",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff"
+}

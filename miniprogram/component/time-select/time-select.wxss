@@ -1,0 +1,16 @@
+/* component/time-select.wxss */
+.active_datetime{
+  color: #7122ef !important;
+}
+.toolbar_datetime view:nth-child(1){
+  color: #888 !important;
+}
+.toolbar_datetime view:nth-child(2){
+  background-color: #7122ef;
+  color: #fff;
+}
+.toolbar_datetime view{
+  width: 50%;
+  padding: 0;
+  text-align: center;
+}

@@ -1,0 +1,39 @@
+<!--pages/search/search.wxml-->
+<view class='header'>
+  <view class='search'>
+     <van-search custom-class="van_search" focus="{{ true }}" value="{{ value }}" bind:search="onSearch" bind:change="onChange" bind:clear="onClear" use-action-slot placeholder="请输入搜索关键词">
+     <view slot="action" bind:tap='onSearch'>搜索</view>
+     </van-search>
+  </view>
+</view>
+<view class='record' wx:if='{{ isRecord }}'>
+  <text class='title'>历史搜索</text>
+  <block wx:for='{{ searchRecord }}' wx:key='index'>
+    <text class='lable' data-value='{{ item }}' bindtap='clickRecord'>{{ item }}</text>
+  </block>
+</view>
+<view class='result' wx:else style='margin-top:50px'>
+  <scroll-view class='user_box' scroll-x >
+    <block wx:for='{{ userData }}' wx:key='{{ item._id }}'>
+      <view class='user' data-userid="{{ item.openid }}" bindtap="goPageSpace">
+        <image mode='widthFix' src='{{item.user.avatarUrl}}'></image>
+        <text class='text'>{{ item.user.nickName }}</text>
+      </view>
+    </block>
+    <view class='user click' wx:if='{{ isUser }}'>
+       <view class='button' data-value="{{ value }}" bindtap='goPageMember'>
+          <text class='more'>更 多</text>
+       </view>
+    </view>
+  </scroll-view>
+  <view class="empty" wx:if="{{ activityData.length == 0 }}">
+    <image mode="widthFix" src="../../images/zanwuricheng@3x.png"></image>
+  </view>
+  <view wx:else class='card'>
+    <card-com id="card" prop-a="{{activityData}}"></card-com>
+    <view wx:if="{{ !isLoad }}" class="load" style="margin-top:8px;">
+      <text>数据已全部加载...</text>
+    </view>
+  </view>
+</view>
+<van-dialog id="van-dialog" />

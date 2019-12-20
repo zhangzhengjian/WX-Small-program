@@ -1,0 +1,168 @@
+<!--pages/detail/detail.wxml-->
+<view class='header'>
+  <image class='userUrl' mode='widthFix' src='{{ activityDetail.description.user.avatarUrl }}' data-openid="{{ activityDetail.description.openid }}" bindtap="goPageSpace"></image>
+  <text class='userName'>{{ activityDetail.description.user.nickName }}</text>
+  <!-- <view class='follow' wx:if='{{ isFooter }}' data-userid='{{activityDetail.description.openid}}' bindtap="clickFollow">
+    <text>{{ activityDetail.description.isFollow?'已关注':'关注' }}</text>
+  </view> -->
+  <view class='follow'>
+    <button open-type="share">分享</button>
+  </view>
+  <view style='clear:both' />
+</view>
+<view class="count_down">
+  <text class="title">报名剩余时间：</text>
+  <van-count-down use-slot time="{{ activityDetail.description.overTime }}" data-id='{{ item._id }}' bind:change="onTimeChange">
+    <view class="inline">
+      <text class="item">{{ timeData.days }}</text>天</view>
+    <view class="inline">
+      <text class="item">{{ timeData.hours }}</text>时</view>
+    <view class="inline">
+      <text class="item">{{ timeData.minutes }}</text>分</view>
+    <view class="inline">
+      <text class="item">{{ timeData.seconds }}</text>秒</view>
+  </van-count-down>
+</view>
+<view wx:if="{{ activityDetail.description.images.length > 0 }}" class="swiper">
+  <swiper indicator-dots="{{ true }}" autoplay="{{ isAutoplay }}" interval="{{3000}}" duration="{{500}}" indicator-color="rgba(255, 255, 255, 0.4)" indicator-active-color="#2298ef">
+    <block wx:for="{{ activityDetail.description.images }}" wx:key="index">
+      <swiper-item>
+        <image class="card_photo" mode="aspectFit" wx:if="{{ item.type == 'photo' }}" src="{{ item.path }}" data-path="{{ item.path }}" data-pathArr="{{ items.path }}" bindtap="previewImage"></image>
+        <video class="card_video" wx:if="{{ item.type == 'video' }}" src="{{ item.path }}" bindplay="bindplay" bindpause="bindpause"></video>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='lable'>
+  <block wx:for='{{ activityDetail.description.activityLable }}' wx:key='index'>
+    <text>#{{ item }}</text>
+  </block>
+</view>
+<view class='classification'>
+  <view class='cell'>
+    <text class='title'>活动名称：</text>
+    <text class='content'>{{ activityDetail.description.title }}</text>
+    <view style='clear:both' />
+  </view>
+  <view class='cell'>
+    <view>
+      <text class='title'>活动地址：</text>
+      <text class="map" data-adcode='{{activityDetail.description.areaCode}}' data-place='{{activityDetail.description.place}}' data-address='{{activityDetail.description.address}}' bindtap='goPageMap'>查看地图</text>
+      <view style='clear:both' />
+    </view>
+    <text class='areatext'>{{ activityDetail.description.address }}/  {{ activityDetail.description.place }}</text>
+  </view>
+</view>
+<view class='classification'>
+  <view class='cell'>
+    <text class='title'>活动开始时间：</text>
+    <text class='content'>{{ activityDetail.description.startTime }}</text>
+    <view style='clear:both' />
+  </view>
+  <view class='cell'>
+    <text class='title'>活动结束时间：</text>
+    <text class='content'>{{ activityDetail.description.endTime }}</text>
+    <view style='clear:both' />
+  </view>
+</view>
+<view class='classification'>
+  <view class='cell'>
+    <text class='title'>年龄要求：</text>
+    <text class='content'>{{ activityDetail.description.ageRange }}</text>
+    <view style='clear:both' />
+  </view>
+  <view class='cell'>
+    <text class='title'>性别要求：</text>
+    <text class='content'>{{ activityDetail.description.sex == '0'?'性别不限' : activityDetail.description.sex == '1'?'男' : activityDetail.description.sex == '2'?'女':'null' }}</text>
+    <view style='clear:both' />
+  </view>
+  <view class='cell'>
+    <text class='title'>活动人数：</text>
+    <text class='content'>{{ activityDetail.description.number }}</text>
+    <view style='clear:both' />
+  </view>
+  <view class='cell'>
+    <text class='title'>费用：</text>
+    <text class='content'>{{ activityDetail.description.cost == '0'?activityDetail.description.price : activityDetail.description.cost == '1'?'免费':'null'}}</text>
+    <view style='clear:both' />
+  </view>
+</view>
+<view class='classification'>
+  <van-collapse value="{{ activeNames }}" bind:change="onChange">
+    <van-collapse-item title="活动规则" value="展开" is-link="{{false}}" name="1">
+      {{ activityDetail.description.rule }}
+    </van-collapse-item>
+    <van-collapse-item title="注意事项" value="展开" is-link="{{false}}" name="2">
+      {{ activityDetail.description.warn }}
+    </van-collapse-item>
+  </van-collapse>
+</view>
+<view style="margin-bottom:60px;"></view>
+<view class='footer cancel' wx:if='{{ footerIndex == "1" }}'>
+  <van-row>
+    <van-col span="6">
+      <van-button square size="large" class="gray" bindtap='contact'>联系</van-button>
+    </van-col>
+    <van-col span="6">
+      <van-button square size="large" class="red" bindtap='cancel'>取消</van-button>
+    </van-col>
+    <van-col span="12">
+      <van-button disabled="{{ isCancel }}" class="red_background" square size="large" data-id="{{ activityDetail._id }}" bind:click='cancelActivity'>
+        活动结束
+        <text class='signup'>({{activityDetail.description.agreeNum}}/{{activityDetail.description.number}})</text>
+      </van-button>
+    </van-col>
+  </van-row>
+</view>
+
+
+<view class='footer' wx:if='{{ footerIndex == "2" }}'>
+  <view wx:if='{{ activityDetail.description.isAdopt }}'>
+    <van-row>
+      <van-col span="6">
+        <van-button square size="large" class="gray" bindtap='contact'>群聊</van-button>
+      </van-col>
+      <van-col span="6">
+        <van-button square size="large" class="blue" data-id="{{ activityDetail._id }}" bindtap='goPageMember'>成员</van-button>
+      </van-col>
+      <van-col span="12">
+        <van-button disabled="{{ isCancel }}" class="blue_background" square size="large" data-adcode='{{activityDetail.description.areaCode}}' data-place='{{activityDetail.description.place}}' data-address='{{activityDetail.description.address}}' bind:click='goPageMap'>导航到目的地</van-button>
+      </van-col>
+    </van-row>
+  </view>
+  <view wx:else>
+    <van-row>
+      <van-col span="6">
+        <van-button square size="large" class="gray" bindtap='contact'>联系</van-button>
+      </van-col>
+      <van-col span="6">
+        <van-button square size="large" class="red" bindtap='cancel'>取消</van-button>
+      </van-col>
+      <van-col span="12">
+        <van-button disabled="{{ isCancel }}" class="blue_background" square size="large" data-id="{{ activityDetail._id }}" bind:click='signUp'>
+          {{ activityDetail.description.isSignUp? '审核中' : '报名' }}
+          <text class='signup'>({{activityDetail.description.agreeNum}}/{{activityDetail.description.number}})</text>
+        </van-button>
+      </van-col>
+    </van-row>
+  </view>
+</view>
+
+
+<view class='footer cancel' wx:if='{{ footerIndex == "3" }}'>
+  <van-row>
+    <van-col span="6">
+      <van-button square size="large" class="gray" bindtap='contact'>群聊</van-button>
+    </van-col>
+    <van-col span="6">
+      <van-button square size="large" class="blue" data-id="{{ activityDetail._id }}" bindtap='goPageMember'>成员</van-button>
+    </van-col>
+    <van-col span="12">
+      <van-button disabled="{{ isCancel }}" class="red_background" color='#ed462f' square size="large" data-id="{{ activityDetail._id }}" bind:click='cancelActivity'>
+        取消活动
+        <text class='signup'>({{activityDetail.description.agreeNum}}/{{activityDetail.description.number}})</text>
+      </van-button>
+    </van-col>
+  </van-row>
+</view>
+<van-dialog id="van-dialog" />

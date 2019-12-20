@@ -1,0 +1,27 @@
+<view class='header'>
+  <text class='title'>当前位置</text>
+  <view class='select_city'>
+    <van-icon name="location" color="#2298ef" />
+    <text>{{city}}</text>
+    <button class='submit' size="mini" plain="true" bindtap='confirm'>确定</button>
+  </view>
+</view>
+<scroll-view scroll-y="true" scroll-into-view="{{scrollTopId}}" scroll-with-animation="true">
+<view class='city_select'>
+  <block wx:for="{{addressItem}}" wx:for-index="idx" wx:key="index">
+     <text id="{{ item.title }}" class='acronym'>{{item.title}}</text>
+     <view class='city_box'>
+     <block wx:for="{{item.content}}" wx:key="index">
+       <view class='city'>
+       <text bindtap='selectCity' data-city='{{item.fullname}}' data-adcode='{{item.id}}'>{{item.fullname}}</text>
+       </view>
+     </block>
+     </view>
+  </block>
+</view>
+</scroll-view>
+<view class='letter'>
+  <block wx:for="{{itemTitle}}" wx:key="index">
+    <text data-id='{{ item }}' bindtap='clickLetter'>{{item}}</text>
+  </block>
+</view>

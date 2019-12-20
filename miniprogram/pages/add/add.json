@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "time-select":"/component/time-select/time-select",
+    "sex-select": "/component/sex-select/sex-select",
+    "age-select": "/component/age-select/age-select",
+    "checkbox-select": "/component/checkbox-select/checkbox-select",
+    "photo-com": "/component/photo-com/photo-com",
+    "van-notice-bar": "/miniprogram_npm/vant-weapp/notice-bar/index"
+  },
+  "navigationBarTitleText": "创建活动",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff"
+}

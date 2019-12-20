@@ -1,0 +1,18 @@
+<!--pages/already-signup/already-signup.wxml-->
+<view class="container">
+  <van-tabs sticky active="0" border="{{ false }}" swipeable="{{ true }}" bind:change="onChangeTabs">
+    <van-tab title="报名失败"></van-tab>
+    <van-tab title="报名成功"></van-tab>
+  </van-tabs>
+</view>
+<view class="empty" wx:if="{{ activityData.length == 0 }}">
+  <image mode="widthFix" src="../../images/zanwuricheng@3x.png"></image>
+</view>
+<view wx:else style='width:100%;margin-top:50px'>
+  <card-com id="card" prop-a="{{activityData}}"></card-com>
+  <view wx:if="{{ !isLoad }}" class="load">
+    <text>数据已全部加载...</text>
+  </view>
+</view>
+<van-dialog id="van-dialog" />
+

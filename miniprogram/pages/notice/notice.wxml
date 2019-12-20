@@ -1,0 +1,33 @@
+<!--pages/notice/notice.wxml-->
+<view class="container">
+  <van-tabs sticky active="0" border="{{ false }}" swipeable="{{ true }}" bind:change="onChangeTabs">
+    <van-tab title="已通过"></van-tab>
+    <van-tab title="已拒绝"></van-tab>
+  </van-tabs>
+</view>
+<view class="empty" wx:if="{{ activityData.length == 0 }}">
+  <image mode="widthFix" src="../../images/zanwuricheng@3x.png"></image>
+</view>
+<view wx:else class="content">
+  <block wx:for="{{ activityData }}" wx:key="index">
+    <view class="examine_card">
+      <view class="header">
+        <image mode="widthFix" src="{{ tab==0?'../../images/adopt.png':'../../images/noadopt.png' }}"></image>
+        <text class="tips">{{ tab==0?'您的报名申请已通过':'您未通过申请' }}！</text>
+      </view>
+      <text class="title">{{ item.description.title }}</text>
+      <view wx:if="{{ tab == 0 }}" class="activityTime">
+        <text>活动开始时间：{{ item.description.startTime }}</text>
+        <text>活动结束时间：{{ item.description.endTime }}</text>
+      </view>
+      <view>
+        <van-cell is-link title="{{ tab==0?'查看详情':'重新报名' }}" border="{{ false }}" data-id="{{ item._id }}" bindtap="goPage" />
+      </view>
+      <image wx:if="{{ item.isNewActivity }}" class="new" mode="widthFix" src="../../images/new.png"></image>
+    </view>
+  </block>
+  <view wx:if="{{ !isLoad }}" class="load">
+    <text>数据已全部加载...</text>
+  </view>
+</view>
+<van-dialog id="van-dialog" />

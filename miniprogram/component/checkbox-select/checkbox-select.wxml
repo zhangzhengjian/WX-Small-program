@@ -1,0 +1,28 @@
+<!--component/checkbox-select/checkbox-select.wxml-->
+<van-action-sheet show="{{ propA }}" close-on-click-overlay="{{true}}" bind:close="cancelCheckboxSelect">
+<van-row class="popup_oper">
+    <van-col span="12">
+      <van-button custom-class="custom_button" bindtap="cancelCheckboxSelect" size="large">取消</van-button>
+    </van-col>
+    <van-col span="12">
+      <van-button custom-class="custom_button" bindtap="clickCheckboxSelect" size="large">确定</van-button>
+    </van-col>
+  </van-row>
+  <view class='checkbox_box'>
+    <van-checkbox-group value="{{ propB }}" bind:change="onChange">
+  <van-cell-group >
+    <van-cell
+      wx:for="{{ propC }}"
+      wx:key="index"
+      title="#{{item.name}}"
+      value-class="value-class"
+      clickable
+      data-index="{{ item.id }}"
+      bind:click="toggle"
+    >
+      <van-checkbox catch:tap="noop" class="checkboxes-{{ item.id }}" name="{{ item.id }}" />
+    </van-cell>
+  </van-cell-group>
+</van-checkbox-group>
+  </view>
+</van-action-sheet>

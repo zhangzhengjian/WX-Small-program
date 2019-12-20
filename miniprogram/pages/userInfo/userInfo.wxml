@@ -1,0 +1,47 @@
+<!--pages/userInfo/userInfo.wxml-->
+<view class='background'>
+<view class='input_box' data-type='sex' bindtap='selectRadio'>
+<image mode='widthFix' src='../../images/sex.png'></image>
+<van-cell title="性别" value="{{ userInfoData.sex == '1'?'男' : userInfoData.sex == '2'?'女':'' }}" border='{{false}}' is-link />
+<view style='clear:both' />
+</view>
+<view class='input_box' bindtap='selectTime'>
+<image mode='widthFix' src='../../images/age.png'></image>
+<van-cell title="生日" border='{{false}}' is-link value="{{userInfoData.birth}}" />
+<view style='clear:both' />
+</view>
+<view class='input_box'>
+<image mode='widthFix' src='../../images/phone.png'></image>
+<!-- <van-cell title="手机号" border='{{false}}' is-link value='{{ userInfoData.phone }}' /> -->
+<!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button> -->
+<van-field label="手机号码" data-type='phone' bindinput="bindinput" value='{{ userInfoData.phone }}' border="{{ false }}" input-align="right" />
+<view style='clear:both' />
+</view>
+<view class='input_box'>
+<image mode='widthFix' src='../../images/wx.png'></image>
+<van-field label="微信号" data-type='weixin' bindinput="bindinput" value='{{ userInfoData.weixin }}' border="{{ false }}" input-align="right" />
+<view style='clear:both' />
+</view>
+<view class='input_box' bindtap='goPagelable'>
+<image mode='widthFix' src='../../images/lable.png'></image>
+<van-cell title="兴趣标签" border='{{false}}' is-link value="{{lableString}}" />
+<view style='clear:both' />
+</view>
+<view class='input_box'>
+<image mode='widthFix' src='../../images/state.png'></image>
+<van-cell title="个人签名" border='{{false}}' value="" />
+<view style='clear:both' />
+<!-- <textarea wx:if="{{ radioSelectShow == timeSelectShow }}" placeholder="写下自己的心情！" value='{{ userInfoData.state }}' data-type='state' bindinput="bindinput" placeholder-style='color:#999;'></textarea> -->
+<text class="textarea" data-type='mood' data-value='{{userInfoData.state}}' bindtap="goPageEdit">{{ userInfoData.state? userInfoData.state : "写下自己的心情！" }}</text>
+
+</view>
+</view>
+<view class='footer'>
+  <view class='button_box'>
+    <van-button size="normal" bindtap='signup'>保存</van-button>
+  </view>
+</view>
+<sex-select prop-a="{{ radioSelectShow }}" prop-b="{{ radioData }}"
+bind:onRadioSelect="onRadioSelect"></sex-select>
+<time-select prop-a="{{ timeSelectShow }}" prop-b="{{ timeSelectDate }}" prop-c="{{ timeShowType }}" bind:onTimeSelect="onTimeSelect"></time-select>
+<van-dialog id="van-dialog" />

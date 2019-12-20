@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "sex-select": "/component/sex-select/sex-select",
+    "time-select": "/component/time-select/time-select"
+  },
+  "navigationBarTitleText": "完善用户信息",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff"
+}

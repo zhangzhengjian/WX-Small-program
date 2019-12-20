@@ -1,0 +1,6 @@
+<!--pages/address/address.wxml-->
+<!-- <view class='address_box'>
+  <text class='address_title'>地址：</text>
+  <text class='address_field'>{{address}}</text>
+</view> -->
+<van-area item-height="32" bind:confirm="confirm" bind:cancel="cancel" bind:change="change" visible-item-count="5" area-list="{{ areaList }}" value="{{areaCode}}" />

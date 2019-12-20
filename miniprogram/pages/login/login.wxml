@@ -1,0 +1,13 @@
+<!--pages/login/login.wxml-->
+<view class='login'>
+  <image class='background' mode='widthFix' src="../../images/background@3x.png"></image>
+  <view class='weixin'>
+    <image src='../../images/pgy.png'></image>
+    <text>记录我的生活</text>
+  </view>
+  <view class='button_box'>
+    <button class='login_button' open-type="getUserInfo" bindgetuserinfo='bindgetuserinfo'>微信授权</button>
+    <button class='cancel_button' bindtap="goPageIndex">我是游客，暂时不想登录！</button>
+  </view>
+</view>
+<van-dialog id="van-dialog" />

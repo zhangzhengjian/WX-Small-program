@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class='header'>
+  <van-row>
+  <van-col span="6" class="place" bindtap="goAddressPage">
+    <text>{{city}}</text><van-icon name="arrow-down"></van-icon>
+  </van-col>
+  <van-col span="18" class="search">
+    <van-search custom-class="van_search" value="{{ value }}" placeholder="请输入搜索关键词" bindtap="goPageSearch" disabled='true' />
+  </van-col>
+</van-row>
+</view>
+<view class="container">
+<van-tabs active="0" border="{{ false }}" swipeable="{{ true }}" bind:change="onChangeTabs">
+  <van-tab title="全部"></van-tab>
+  <van-tab title="收藏"></van-tab>
+  <van-tab title="同城"></van-tab>
+  <van-tab title="关注"></van-tab>
+</van-tabs>
+<view class="empty" wx:if="{{ activityData.length == 0 }}">
+  <image mode="widthFix" src="../../images/zanwuricheng@3x.png"></image>
+</view>
+<view wx:else style='width:100%'>
+  <card-com id="card" prop-a="{{activityData}}"></card-com>
+  <view wx:if="{{ !isLoad }}" class="load">
+    <text>数据已全部加载...</text>
+  </view>
+</view>
+</view>
+<van-dialog id="van-dialog" />

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "card-com": "/component/card-com/card-com"
+  },
+  "navigationBarTitleText": "已报名",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff"
+}

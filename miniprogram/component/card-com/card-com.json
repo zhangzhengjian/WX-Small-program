@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-count-down": "/miniprogram_npm/vant-weapp/count-down/index"
+  }
+}

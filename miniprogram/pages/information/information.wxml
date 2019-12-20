@@ -1,0 +1,26 @@
+<!--pages/information/information.wxml-->
+<view class='information_background'>
+<view class='information_box'>
+  <van-cell custom-class="custom_cell" border="{{false}}" value="" is-link link-type="navigateTo" url="/pages/examine/examine?realTimeData={{realTimeData}}">
+    <view class='information' slot="title">
+      <image mode='widthFix' src='../../images/exmine.png'></image>
+      <view class="van-cell-text">活动审批</view>
+      <view class="van-cell-red" wx:if="{{ num.activityNum !== 0 }}">{{ num.activityNum }}</view>
+    </view>
+  </van-cell>
+  <van-cell custom-class="custom_cell" border="{{false}}" value="" is-link link-type="navigateTo" url="/pages/notice/notice?noticeData={{noticeData}}">
+    <view class='information' slot="title">
+    <image mode='widthFix' src='../../images/notice.png'></image>
+      <view class="van-cell-text">通知</view>
+      <view class="van-cell-red" wx:if="{{ num.noticeNum !== 0 }}">{{ num.noticeNum }}</view>
+    </view>
+  </van-cell>
+  <van-cell custom-class="custom_cell" border="{{false}}" value="" is-link link-type="navigateTo" url="/pages/system-info/system-info">
+    <view class='information' slot="title">
+    <image mode='widthFix' src='../../images/news.png'></image>
+      <view class="van-cell-text">系统信息</view>
+    </view>
+  </van-cell>
+</view>
+</view>
+<van-dialog id="van-dialog" />

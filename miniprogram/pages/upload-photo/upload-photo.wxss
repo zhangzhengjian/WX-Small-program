@@ -1,0 +1,20 @@
+/* pages/upload-photo/upload-photo.wxss */
+.header .van-tabbar{
+  height: 60px;
+  border-bottom: 1px solid #eee;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+}
+.footer .button_box{
+  margin: 0 30rpx 20rpx 30rpx;
+}
+.footer van-button .van-button{
+  width: 100%;
+  background-color: #7122ef !important;
+  color: #fff;
+  border: none;
+}

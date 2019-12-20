@@ -1,0 +1,14 @@
+<!--pages/follow/follow.wxml-->
+<view class="container">
+  <van-tabs sticky active="0" border="{{ false }}" swipeable="{{ true }}" bind:change="onChangeTabs">
+    <van-tab title="关注"></van-tab>
+    <van-tab title="粉丝"></van-tab>
+  </van-tabs>
+</view>
+<view class="empty" wx:if="{{ userInfoData.length == 0 }}">
+  <image mode="widthFix" src="../../images/zanwuricheng@3x.png"></image>
+</view>
+<view wx:else class='content'>
+  <follow-com prop-a="{{userInfoData}}"></follow-com>
+</view>
+<van-dialog id="van-dialog" />

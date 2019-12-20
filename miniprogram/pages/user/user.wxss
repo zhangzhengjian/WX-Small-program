@@ -1,0 +1,128 @@
+/* pages/user/user.wxss */
+page{
+  background-color: rgb(248, 248, 248);
+}
+.user_header{
+  background-color: #7122ef;
+  width: 100%;
+}
+.user_left{
+  float: left;
+  width: 28%;
+  height: 120px;
+  text-align: center;
+}
+.user_left .user_brand{
+  margin-top: 35px;
+  font-size: 14px;
+  color: #fff;
+  display: block;
+}
+.user_left .user_detail{
+  font-size: 12px;
+  color: #fff;
+  border: 1px solid #dff2ff;
+  border-radius: 12px;
+  padding: 0 10px;
+}
+.user_center{
+  display: inline-block;
+  width: 44%;
+  height: 120px;
+  text-align: center;
+}
+.user_center .user_image{
+  margin-top: 20px;
+  display: inline-block;
+  width: 120rpx;
+  height: 120rpx;
+  background-color: #fff;
+  border-radius: 120rpx;
+  text-align: center;
+  border: 1px solid #fff;
+}
+.user_center .user_image .image{
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+.user_center .nick_name .user_name,.user_center .nick_name .login{
+  color: #fff;
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 10rpx;
+}
+.user_center .nick_name .login{
+  border: 1px solid #fff;
+  border-radius: 30px;
+  line-height: 18px;
+  padding:  0 6px;
+}
+.user_center .user_member{
+  color: #fff;
+  font-size: 12px;
+  display: block;
+  margin-top: 15rpx;
+}
+.user_right{
+  display: inline-block;
+  float: right;
+  width: 28%;
+  height: 120px;
+  text-align: left;
+}
+.user_right .user_title{
+  font-size: 12px;
+  color: #fff;
+  display: block;
+}
+.user_right .user_title text{
+  font-size: 14px;
+  color: rgb(255, 252, 70);
+}
+.user_right .user_title:nth-child(1){
+  margin-top: 35px;
+}
+.user_right .user_integral{
+  font-size: 14px;
+  color: rgb(255, 252, 70);
+  display: block;
+}
+.background_user{
+  width: 100%;
+  display: block;
+  background-color: #fff;
+}
+.value_class{
+  font-size: 12px;
+}
+.user_tabbar{
+  width: 100%;
+  height: 75px;
+  background-color: #fff;
+}
+.user_tabbar .user_operation{
+  width: 25%;
+  display: inline-block;
+  text-align: center;
+  color: rgb(201, 201, 201);
+  margin-top: 15px;
+}
+.user_tabbar .user_operation text{
+  display: block;
+  font-size: 12px;
+  color: #333;
+}
+.user_cell{
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+.user_cell .van-cell{
+  width: auto !important;
+  padding: 10px 0 !important;
+  margin: 0 15px;
+  border-bottom: 1px solid #eee;
+}
+.user_cell van-cell:nth-last-child(1) .van-cell{
+  border-bottom: none;
+}

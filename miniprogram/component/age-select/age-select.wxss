@@ -1,0 +1,8 @@
+/* component/age-select/age-select.wxss */
+.popup_oper .custom_button{
+  border: none !important;
+}
+.popup_oper van-col:nth-child(2) .custom_button{
+  background-color: #7122ef;
+  color: #fff;
+}

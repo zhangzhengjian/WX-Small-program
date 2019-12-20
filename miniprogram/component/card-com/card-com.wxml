@@ -1,0 +1,71 @@
+<!--miniprogram/component/card-com/card-com.wxml-->
+<block wx:for="{{propA}}" wx:key="{{item._id}}">
+  <view class='content_box'>
+    <view class='content_header'>
+      <image class='head_portrait' mode="widthFix" src="{{item.description.user.avatarUrl}}" data-openid='{{ item.description.openid }}' bindtap='goPageSpace'></image>
+      <view class='user_info'>
+        <text class='name'>{{item.description.user.nickName}}</text>
+        <view class='lable_box'>
+          <view class='lable' style="{{item.description.perject.sex == '1'? 'background-color:#2298ef':'background-color:#f870b4'}}">
+            <image mode="widthFix" src="{{ item.description.perject.sex == '1' ? '../../images/boy.png':'../../images/girl.png' }}"></image>
+            <text>{{item.description.perject?item.description.perject.age+'岁':'保密'}}</text>
+          </view>
+          <block wx:for="{{item.description.activityTypeArr}}" wx:key="{{item}}">
+            <text class='lable text'>#{{item}}</text>
+          </block>
+        </view>
+      </view>
+      <view class='follow'>
+        <view class="follow_button" wx:if="{{item.description.collect}}" data-id="{{item._id}}" data-type="cancel" bindtap='clickCollect'>
+          <van-icon name="star-o" size="12px" color="#06c054" /> 已收藏
+        </view>
+        <view class="follow_button" wx:else data-id="{{item._id}}" data-type="collect" bindtap='clickCollect'>
+          <van-icon name="star-o" size="12px" color="#06c054" /> 收藏
+        </view>
+      </view>
+    </view>
+    <view class='content_information' data-id='{{item._id}}' bindtap='goDetailPage'>
+      <view class='title'>
+        <text class='title_value'>{{item.description.title}}</text>
+      </view>
+      <view wx:if="{{ item.description.images.length > 0 }}">
+        <image class="card_photo" mode="widthFix" wx:if="{{ item.description.images[0].type == 'photo' }}" src="{{ item.description.images[0].path }}"></image>
+        <video class="card_video" wx:if="{{ item.description.images[0].type == 'video' }}" controls="{{ false }}" src="{{ item.description.images[0].path }}"></video>
+      </view>
+      <view wx:else class='time_place'>
+        <view class='box'>
+          <text>开始时间：</text>
+          <text>{{item.description.startTime}}</text>
+        </view>
+        <view class='box'>
+          <text>结束时间：</text>
+          <text>{{item.description.endTime}}</text>
+        </view>
+        <view class='box'>
+          <text>地点：</text>
+          <text>{{item.description.address}}{{item.description.place}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='content_contact'>
+      <image mode="widthFix" style='width:20px;height:20px;margin-right:4px;' src="../../images/time.png"></image>
+      <!-- <text class='name'>{{item.description.perject.weixin}}</text> -->
+      <text class='name'>剩余报名时间:</text>
+      <!-- <view class='button' data-openid='{{ item.description.openid }}' bindtap='goPageSpace'>
+      <text>查看个人空间</text>
+      <van-icon name="arrow" />
+    </view> -->
+      <van-count-down use-slot time="{{ item.description.overTime }}" data-id='{{ item._id }}' bind:change="onTimeChange">
+        <view class="inline" wx:if='{{ item.description.overTime > 86400000 }}'>
+          <text class="item">{{ item.description.timeData.days }}</text>天</view>
+        <view class="inline">
+          <text class="item">{{ item.description.timeData.hours }}</text>时</view>
+        <view class="inline">
+          <text class="item">{{ item.description.timeData.minutes }}</text>分</view>
+        <view class="inline" wx:if='{{ item.description.overTime < 86400000 }}'>
+          <text class="item">{{ item.description.timeData.seconds }}</text>秒</view>
+      </van-count-down>
+    </view>
+  </view>
+</block>
+<van-dialog id="van-dialog" />

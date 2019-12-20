@@ -1,0 +1,16 @@
+<!--pages/lable/lable.wxml-->
+<view class='lables_box'>
+  <block wx:for='{{ lableData }}' wx:key='index'>
+    <view class='lable_content' data-lable='{{item}}' bindtap='deleteLable'>
+    <text class='lable'>#{{item}}</text>
+    <text class='delete'>-</text>
+    </view>
+  </block>
+  <text class='lable' bindtap='ejectInput'>+</text>
+  <input type='text' value='{{ inputValue }}' focus='{{ isFocus }}' bindinput="bindKeyInput" bindblur="bindKeyBlur" confirm-type='done'></input>
+</view>
+<view class='footer'>
+  <view class='button_box'>
+    <van-button size="normal" bindtap='signup'>确定</van-button>
+  </view>
+</view>

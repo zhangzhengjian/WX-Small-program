@@ -1,0 +1,12 @@
+/* component/checkbox-select/checkbox-select.wxss */
+.value-class {
+  flex: none !important;
+}
+.popup_oper .custom_button{
+  border: none !important;
+  border-radius: 0;
+}
+.popup_oper van-col:nth-child(2) .custom_button{
+  background-color: #7122ef;
+  color: #fff;
+}

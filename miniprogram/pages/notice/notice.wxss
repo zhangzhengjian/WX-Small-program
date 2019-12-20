@@ -1,0 +1,64 @@
+/* pages/notice/notice.wxss */
+.container{
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 100;
+}
+.content{
+  margin-top:40px;
+}
+.examine_card{
+  position: relative;
+  background-color: #fff;
+  margin: 15rpx 20rpx;
+  border-radius: 10rpx;
+  padding: 10rpx 20rpx;
+}
+.examine_card .header{
+  height: 36px;
+  position: relative;
+  margin: 7px 0;
+  background-color: rgb(250, 250, 250);
+  border-radius: 6rpx;
+}
+.examine_card .header image{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+.examine_card .header .tips{
+  color: #333;
+  font-size: 16px;
+  line-height: 36px;
+  margin-left: 35px;
+}
+.examine_card .title{
+ display: block;
+ font-weight: bold;
+ line-height: 30px;
+ padding-top: 10rpx;
+ border-top: 1px dashed #eee;
+}
+.examine_card .activityTime text{
+  display: block;
+  color: #888;
+  font-size: 12px;
+  line-height: 20px;
+}
+.examine_card .van-cell{
+  padding: 10px 0;
+}
+.examine_card .van-cell__title{
+  color: #2298ef;
+}
+.examine_card .new{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  transform:rotate(15deg);
+}

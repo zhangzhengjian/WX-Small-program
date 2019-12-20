@@ -1,0 +1,8 @@
+<!--pages/setting/setting.wxml-->
+<view class='user_cell'>
+  <van-cell value-class="value_class" border="{{false}}" is-link url="/pages/login/login">
+    <view slot="title">
+      <view class="van-cell-text">重新登录</view>
+    </view>
+  </van-cell>
+</view>

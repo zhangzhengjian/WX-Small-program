@@ -1,0 +1,42 @@
+/**index.wxss**/
+page {
+  background: #f6f6f6;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.header{
+  padding: 20rpx;
+  background-color: #7122ef;
+  height: 34px;
+}
+.header .place{
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  position: relative;
+}
+.header .place text{
+  font-size: 12px;
+  display: inline-block;
+  line-height: 34px;
+  width: 120rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.header .place van-icon{
+  position: absolute;
+  top: 10px;
+  left: 120rpx;
+}
+.header .search .van_search{
+  padding: 0;
+  background: transparent !important;
+}
+.header .search .van-search__content{
+  border-radius: 34px;
+  background-color: #f6f0ff;
+}

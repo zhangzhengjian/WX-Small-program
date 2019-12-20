@@ -1,0 +1,7 @@
+/* pages/already-signup/already-signup.wxss */
+.container{
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 100;
+}

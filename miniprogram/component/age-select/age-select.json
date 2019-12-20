@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-picker": "/miniprogram_npm/vant-weapp/picker/index",
+    "van-button": "/miniprogram_npm/vant-weapp/button/index"
+  }
+}

@@ -1,0 +1,22 @@
+<!--component/sex-select/sex-select.wxml-->
+<van-action-sheet show="{{ propA }}" close-on-click-overlay="{{true}}" bind:close="cancelRadioSelect">
+  <van-row class="popup_oper">
+    <van-col span="12">
+      <van-button custom-class="custom_button" bindtap="cancelRadioSelect" size="large">取消</van-button>
+    </van-col>
+    <van-col span="12">
+      <van-button custom-class="custom_button" bindtap="clickRadioSelect" size="large">确定</van-button>
+    </van-col>
+  </van-row>
+  <view>
+    <van-radio-group value="{{ propB.current }}" bind:change="changeRadioSelect">
+      <van-cell-group>
+        <block wx:for="{{ propB.data }}" wx:key="{{ item.id }}">
+        <van-cell title="{{ item.name }}" value-class="value-class" clickable data-id="{{ item.id }}" bind:click="onClick">
+          <van-radio name="{{ item.id }}" />
+        </van-cell>
+        </block>
+      </van-cell-group>
+    </van-radio-group>
+  </view>
+</van-action-sheet>

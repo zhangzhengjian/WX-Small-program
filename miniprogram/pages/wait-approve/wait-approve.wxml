@@ -1,0 +1,10 @@
+<!--pages/collection/collection.wxml-->
+<view class="empty" wx:if="{{ activityData.length == 0 }}">
+  <image mode="widthFix" src="../../images/zanwuricheng@3x.png"></image>
+</view>
+<view wx:else style='margin-top:30rpx'>
+  <card-com id="card" prop-a="{{activityData}}"></card-com>
+  <view wx:if="{{ !isLoad }}" class="load">
+    <text>数据已全部加载...</text>
+  </view>
+</view>

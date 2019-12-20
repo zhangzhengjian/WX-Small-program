@@ -1,0 +1,11 @@
+/* pages/follow/follow.wxss */
+.container{
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 100;
+}
+.content{
+  margin-top: 44px;
+  background-color: #fff;
+}

@@ -1,0 +1,17 @@
+<!--component/age-select/age-select.wxml-->
+<van-action-sheet show="{{ propA }}" close-on-click-overlay="{{true}}" bind:close="cancelAgeSelect">
+  <van-row class="popup_oper">
+    <van-col span="12">
+      <van-button custom-class="custom_button" bindtap="cancelAgeSelect" size="large">取消</van-button>
+    </van-col>
+    <van-col span="12">
+      <van-button custom-class="custom_button" bindtap="clickAgeSelect" size="large">确定</van-button>
+    </van-col>
+  </van-row>
+  <view style='width:50%;display: inline-block;'>
+    <van-picker columns="{{ columnOne }}" default-index="{{ propB.minIndex }}" bind:change="onChangeOne" />
+  </view>
+  <view style='width:50%;display: inline-block;'>
+    <van-picker columns="{{ columnTwo }}" default-index="{{ propB.maxIndex }}" bind:change="onChangeTwo" />
+  </view>
+</van-action-sheet>

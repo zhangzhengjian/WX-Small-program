@@ -1,0 +1,30 @@
+<!--component/follow-com/follow-com.wxml-->
+<block wx:for='{{ propA }}' wx:key='index'>
+    <view class='user_box'>
+      <van-row class='user'>
+        <van-col span="4" data-userid="{{ item.openid }}" bindtap="goPageSpace">
+          <view class='userImage'>
+            <image mode='widthFix' src='{{ item.user.avatarUrl }}'></image>
+          </view>
+        </van-col>
+        <van-col span="16" data-userid="{{ item.openid }}" bindtap="goPageSpace">
+          <view class='userInfo'>
+            <text class='userName'>{{ item.user.nickName }}</text>
+            <view class='lable_box'>
+              <view class='sex' style="{{item.perject.sex == '1'? 'background-color:#2298ef':'background-color:#f870b4'}}">
+                <image mode="widthFix" src="{{ item.perject.sex == '1' ? '../../images/boy.png':'../../images/girl.png' }}"></image>
+                <text>{{ item.perject.age }}岁</text>
+              </view>
+              <text class='lable'>{{ item.user.city }}</text>
+            </view>
+          </view>
+        </van-col>
+        <van-col span="4">
+          <view wx:if="{{!item.isButton}}" class='follow' data-userid='{{item.openid}}' bindtap="clickFollow">
+            <text>{{item.isFollow ? '已关注':'关注'}}</text>
+          </view>
+        </van-col>
+      </van-row>
+    </view>
+  </block>
+  <van-dialog id="van-dialog" />

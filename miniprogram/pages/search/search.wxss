@@ -1,0 +1,94 @@
+/* pages/search/search.wxss */
+.header{
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+.header .search{
+  margin: 20rpx 30rpx;
+}
+.header .search .van_search{
+  padding: 0;
+  background-color: #fff;
+}
+.header .search .van-search__content{
+  border-radius: 34px;
+  background-color: #f6f0ff;
+}
+
+.record{
+  margin: 60px 30rpx 0 30rpx;
+}
+.record .title{
+  font-size: 14px;
+  color: rgb(116, 116, 116);
+  display: block;
+  padding-bottom: 20rpx;
+}
+.record .lable{
+  padding: 0 20rpx;
+  display: inline-block;
+  border: 1px solid rgb(182, 182, 182);
+  color: rgb(182, 182, 182);
+  font-size: 14px;
+  margin: 0 20rpx 20rpx 0;
+  border-radius: 40px;
+}
+.result .card{
+  margin-top: 30rpx;
+} 
+
+.user_box{
+  white-space: nowrap;
+  width: 100%;
+  background-color: #fff;
+  padding: 20rpx 25rpx 10rpx 25rpx;
+}
+.user_box .user{
+  text-align: center;
+  display: inline-block;
+  margin-right: 20rpx;
+  height: 80px;
+}
+.user_box .user image{
+  width: 52px;
+  height: 52px;
+  border-radius: 52px;
+}
+.user_box .user .text{
+  display: block;
+  font-size: 14px;
+  color: #555;
+  width: 60px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.user_box .user.click{
+  /* position: relative;
+  right: 0;
+  top: -25px; */
+  position: relative;
+  height: 86px;
+  width: 30px;
+  margin: 0 60rpx 0 20rpx;
+}
+.user_box .user.click .button{
+  position: absolute;
+  top: 14px;
+  left: 0;
+  width: 24px;
+  height: 60px;
+  display: inline-block;
+  border: 1px solid #7122ef;
+  border-radius: 10rpx;
+}
+.user_box .user.click .button .more{
+  font-size: 14px;
+  color: #7122ef;
+  writing-mode: vertical-lr;  
+  writing-mode: tb-lr;
+  margin-top: 12px
+}

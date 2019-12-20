@@ -1,0 +1,57 @@
+/* pages/lable/lable.wxss */
+.lables_box{
+  background-color: #fff;
+  min-height: 200px;
+  padding: 20rpx;
+}
+.lables_box .lable_content{
+  position: relative;
+  display: inline-block;
+}
+.lables_box .lable{
+  display: inline-block;
+  padding: 3rpx 16rpx;
+  border: 1px solid #2298ef;
+  color: #2298ef;
+  font-size: 14px;
+  min-width: 90rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  margin: 10rpx;
+}
+.lables_box input{
+  z-index: -100;
+  position: absolute;
+  top: 0px;
+  right: 1000px;
+}
+
+.lables_box .delete{
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  font-size: 12px;
+  color: #fff;
+  background-color: rgb(211, 211, 211);
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 10px;
+  text-align: center;
+}
+
+.footer{
+  position: fixed;
+  bottom: 20rpx;
+  width: 100%;
+}
+.footer .button_box{
+  margin: 0 30rpx;
+}
+.footer van-button .van-button{
+  width: 100%;
+  background-color: #7122ef !important;
+  color: #fff;
+  border: none;
+}

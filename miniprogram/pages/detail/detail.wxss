@@ -1,0 +1,156 @@
+/* pages/detail/detail.wxss */
+.header{
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  line-height: 42px;
+}
+.header .userUrl{
+  float: left;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #eee;
+  border-radius: 40px;
+}
+.header .userName{
+  line-height: 42px;
+  margin-left: 10px;
+  float: left;
+  font-size: 14px;
+  color: #666;
+}
+.header .follow{
+  float: right;
+  height: 42px;
+}
+.header .follow button{
+  border: 1px solid rgb(240, 149, 88);
+  height: 24px;
+  line-height: 24px;
+  border-radius: 24px;
+  color:rgb(240, 149, 88);
+  margin-top: 9px;
+  font-size: 12px;
+}
+.count_down{
+  background-color: #fff;
+  padding: 10px 10px 20px;
+  height: 20px;
+  line-height: 20px;
+}
+.count_down .title{
+  color: rgb(143, 143, 143);
+  font-size: 14px;
+}
+.count_down van-count-down{
+  float: right;
+}
+
+.count_down .inline{
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.count_down .item {
+  display: inline-block;
+  width: 22px;
+  margin-right: 5px;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  background-color: #1989fa;
+  border-radius: 2px;
+}
+.swiper{
+  margin: 20rpx 0 0;
+  background-color: #000;
+}
+.swiper .card_photo,.swiper .card_video{
+  width: 100%;
+  height: 100%;
+}
+.lable{
+  margin: 20rpx 20rpx 0 20rpx;
+  background-color: #fff;
+  border-radius: 14rpx;
+}
+.lable text{
+  line-height: 40px;
+  font-size: 14px;
+  margin: 0 20rpx;
+  display: inline-block;
+}
+.lable text:nth-child(1){
+  color: #2298ef;
+}
+.lable text:nth-child(2){
+  color: #b460e4;
+}
+.lable text:nth-child(3){
+  color: #e47f60;
+}
+.lable text:nth-child(4){
+  color: #76e460;
+}
+.lable text:nth-child(5){
+  color: #7f24f7;
+}
+.lable text:nth-child(6){
+  color: #e624d5;
+}
+.classification{
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.classification .cell{
+  margin: 0 30rpx;
+  border-bottom: 1px solid #eee;
+}
+.classification .cell:nth-last-child(1){
+  border-bottom: none;
+}
+.classification .cell .title{
+  float: left;
+  line-height: 40px;
+  font-size: 14px;
+  color: rgb(131, 131, 131);
+}
+.classification .cell .content{
+  float: right;
+  line-height: 40px;
+  font-size: 14px;
+  color: #333;
+}
+.classification .cell .map{
+  float: right;
+  line-height: 40px;
+  font-size: 14px;
+  color: #2298ef;
+}
+.classification .cell .areatext{
+  display: block;
+  line-height: 40px;
+  font-size: 14px;
+  color: #333;
+}
+.classification van-collapse .van-cell__value{
+  color: #2298ef !important;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  background-color: #fff;
+  width: 100%;
+}
+.signup{
+  position: absolute;
+  top: 3px;
+  font-size: 10px;
+  color: #9c80ff;
+}
+.cancel .signup{
+  color: #ff9380;
+}
+.van-dialog__message--has-title{
+  padding-top: 0 !important;
+}

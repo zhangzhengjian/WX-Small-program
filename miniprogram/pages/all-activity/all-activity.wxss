@@ -1,0 +1,10 @@
+/* pages/all-activity/all-activity.wxss */
+.container{
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 100;
+}
+.my_activity{
+  margin: 44px 30rpx 0 30rpx;
+}

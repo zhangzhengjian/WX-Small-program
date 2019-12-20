@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-area": "/miniprogram_npm/vant-weapp/area/index"
+  },
+  "navigationBarTitleText": "选择区域地址",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff"
+}

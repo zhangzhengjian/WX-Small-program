@@ -1,0 +1,26 @@
+<block wx:for='{{ propA }}' wx:key='{{item._id}}'>
+  <view class='activity_box'>
+    <view class='title'>
+      <text>{{ item.description.title }}</text>
+      <van-icon color='#2298ef' size='18px' name="clear" data-id='{{ item._id }}' data-type='{{ item.state }}' bindtap='clickDelete' />
+    </view>
+    <view data-id='{{item._id}}' data-state='{{item.state}}' bindtap='goPageDetail'>
+      <view class='time'>
+        <text>活动开始时间：</text>
+        <text>{{ item.description.startTime }}</text>
+      </view>
+      <view class='time'>
+        <text>活动结束时间：</text>
+        <text>{{ item.description.endTime }}</text>
+      </view>
+      <view class="type">
+        <view class='type_lable'>
+          <block wx:for='{{ item.description.activityTypeArr }}' wx:key='{{ index }}'>
+            <text># {{item}}</text>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+<van-dialog id="van-dialog" />

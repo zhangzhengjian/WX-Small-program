@@ -1,0 +1,78 @@
+<!--pages/add/add.wxml-->
+<view class="add_images">
+    <van-field class="select_fill image_field" border="{{ false }}" bindtap="openSystemFile" label="选择图片/视频" placeholder="最多9张" input-align="right" right-icon="arrow" disabled />
+  <view class="image_box">
+    <photo-com prop-a="{{updateImages}}" bind:deleteImage="deleteImage"></photo-com>
+  </view>
+</view>
+<view style="margin-bottom:50px">
+  <view class='background'>
+    <view class='padding'>
+      <van-cell-group>
+        <van-field class="must_fill" value="{{ activityData.title }}" placeholder="请输入标题" border="{{ false }}" required="{{ true }}" label="活动标题" input-align="right" data-type="title" bind:input="onInput" bind:blur="onBlur" />
+        <van-field class="must_fill" disabled value="{{ activityData.startTime }}" placeholder="点击选择" border="{{ false }}" required="{{ true }}" data-type="start" bindtap="selectTime" label="参与时间" input-align="right" right-icon="arrow" />
+        <van-field class="must_fill" disabled value="{{ activityData.endTime }}" placeholder="点击选择" border="{{ false }}" required="{{ true }}" data-type="end" bindtap="selectTime" label="结束时间 " input-align="right" right-icon="arrow" />
+        <van-field class="select_fill no_border" disabled value="{{ activityData.uptoTime }}" placeholder="点击选择" border="{{ false }}" data-type="upto" bindtap="selectUptoTime" label="报名截至时间" input-align="right" right-icon="arrow" />
+        <van-notice-bar scrollable="{{false}}" text="提示：截至时间默认活动开始前24小时或前1小时"/>
+        <van-field class="must_fill border" disabled value="{{ activityData.address }}" placeholder="请选择地点" border="{{ false }}" required="{{ true }}" bindtap='goPage' label="地点" input-align="right" right-icon="arrow" />
+        <van-field class="must_fill" value="{{ activityData.place }}" placeholder="请输入详细地址" border="{{ false }}" required="{{ true }}" data-type="place" bind:input="onInput" bind:blur="onBlur" />
+      </van-cell-group>
+    </view>
+  </view>
+  <view class='background'>
+    <text class='title'>人员规则</text>
+    <view class='padding'>
+      <van-cell-group>
+        <van-field required="{{ true }}" class="must_fill" type="number" value="{{ activityData.number }}" placeholder="请输入人员数" border="{{ false }}" label="人员数" input-align="right" data-type="number" bind:input="onInput" bind:blur="onBlur" />
+        <van-field class="select_fill" value="{{ activityData.ageRange }}" placeholder="选择年龄段" border="{{ false }}" bindtap="selectAge" label="年龄段" input-align="right" right-icon="arrow" disabled />
+        <van-field class="select_fill" value="{{ activityData.sex=='0' ? '性别不限' : activityData.sex=='1' ? '男' : activityData.sex=='2' ? '女': '请选择性别' }}" placeholder="选择性别" border="{{ false }}" data-type="sex" bindtap="selectRadio" label="性别" input-align="right" right-icon="arrow"
+          disabled />
+        <van-field class="select_fill" value="{{ activityData.cost=='0' ? 'AA制' : activityData.cost=='1' ? '免费': '请选择费用类型'}}" placeholder="点击选择" border="{{ false }}" data-type="cost" bindtap="selectRadio" label="费用形式" right-icon="arrow" input-align="right" disabled />
+        <van-field class="select_fill" wx:if="{{ activityData.cost=='0' }}" type="number" value="{{ activityData.price }}" placeholder="请输入金额" border="{{ false }}" label="单人费用" input-align="right" data-type="price" bind:input="onInput" bind:blur="onBlur" />
+      </van-cell-group>
+    </view>
+  </view>
+  <view class='background'>
+    <text class='title'>活动标签</text>
+    <view class='padding'>
+      <van-field class="must_fill" value="{{ activityData.activityTypeName }}" placeholder="点击选择活动类型" border="{{ false }}" required="{{ true }}" bindtap="selectCheckbox" label="类型" right-icon="arrow" input-align="right" disabled />
+    </view>
+  </view>
+  <view class='background'>
+    <text class='title'>活动规则</text>
+    <view class='padding'>
+      <text class="textarea" data-type='rule' data-value='{{activityData.rule}}' bindtap="goPageEdit">{{ activityData.rule? activityData.rule : "请输入活动规则" }}</text>
+    </view>
+  </view>
+  <view class='background'>
+    <text class='title'>注意事项</text>
+    <view class='padding'>
+      <text class="textarea" data-type='warn' data-value='{{activityData.warn}}' bindtap="goPageEdit">{{ activityData.warn? activityData.warn : "请输入注意事项" }}</text>
+    </view>
+  </view>
+</view>
+<view class='footer'>
+  <van-row>
+    <van-col span="5">
+      <van-button class='gray' square size="large" bindtap="cancel">取消</van-button>
+    </van-col>
+    <van-col span="5">
+      <van-button class='blue' square size="large" bindtap="save">保存</van-button>
+    </van-col>
+    <van-col span="14">
+      <van-button class='blue_background' square size="large" bindtap='submit'>提交</van-button>
+    </van-col>
+  </van-row>
+</view>
+<time-select prop-a="{{ timeSelectShow }}" prop-b="{{ timeSelectDate }}" prop-c="{{ timeShowType }}" bind:onTimeSelect="onTimeSelect"></time-select>
+<age-select id="ageSelect" prop-a="{{ ageSelectShow }}" prop-b="{{ currentAge }}" bind:onAgeSelect="onAgeSelect"></age-select>
+<sex-select prop-a="{{ radioSelectShow }}" prop-b="{{ radioData }}" bind:onRadioSelect="onRadioSelect"></sex-select>
+<checkbox-select prop-a="{{ checkboxSelectShow }}" prop-b="{{ checkboxData }}" prop-c="{{ checkboxList }}" bind:onCheckboxSelect="onCheckboxSelect"></checkbox-select>
+<van-popup show="{{ isPopup }}" round custom-style="padding:20rpx 0;" position="bottom" bind:close="onClose">
+<van-cell title="上传图片" clickable="{{ true }}" border="{{ false }}" bindtap="updatePhoto" />
+<van-cell title="上传视频" clickable="{{ true }}" border="{{ false }}" bindtap="updateVideo" />
+</van-popup>
+<van-dialog use-slot title="您还未授权登录，是否授权？" show="{{ isDialog }}" show-cancel-button confirm-button-open-type="getUserInfo" bind:close="onClose" bind:getuserinfo="getUserInfo">
+</van-dialog>
+
+<van-dialog id="van-dialog" />

@@ -1,0 +1,52 @@
+<!--pages/examine/examine.wxml-->
+<view class="empty" wx:if="{{ activityData.length == 0 }}">
+  <image mode="widthFix" src="../../images/zanwuricheng@3x.png"></image>
+</view>
+<view wx:else>
+<block wx:for='{{ activityData }}' wx:for-item='items' wx:key='index'>
+<view class="examine_card">
+  <view class="header">
+    <image mode="widthFix" src="../../images/tips.png"></image>
+    <text>有{{items.newNum}}条新的报名申请</text>
+  </view>
+  <text class="title">{{ items.description.title }}</text>
+  <van-collapse value="{{ items.activeNames }}" border="{{ false }}" data-signup="{{ items.signup }}" data-id="{{ items._id }}" bind:change="onChange">
+    <van-collapse-item title="待审核数：{{ items.signup.length }}" value="点击查看" border="{{ false }}" is-link="{{ false }}" name="1">
+      <block wx:for='{{ items.userInfoData }}' wx:key='index'>
+      <view class='user_box'>
+        <van-row class='user'>
+          <van-col span="4">
+            <view class='userImage' data-userid="{{ item.openid }}" bindtap="goPageSpace">
+              <image mode='widthFix' src='{{ item.user.avatarUrl }}'></image>
+            </view>
+          </van-col>
+          <van-col span="12">
+            <view class='userInfo'>
+              <text class='userName' style="{{item.isNewSignup?'font-weight: bold':'font-weight: 400'}}">{{ item.user.nickName }}</text>
+              <view class='lable_box'>
+                <view class='sex' style="{{item.perject.sex == '1'? 'background-color:#2298ef':'background-color:#f870b4'}}">
+                  <image mode="widthFix" src="{{ item.perject.sex == '1' ? '../../images/boy.png':'../../images/girl.png' }}"></image>
+                  <text>{{ item.perject.age }}岁</text>
+                </view>
+              </view>
+            </view>
+          </van-col>
+          <van-col span="4">
+            <view class='operation' data-userid='{{item.openid}}' data-id='{{items._id}}' data-description='{{items.description}}' data-nickname='{{item.user.nickName}}' data-type='refuse' bindtap="clickAgreeRefuse">
+              <text>拒绝</text>
+            </view>
+          </van-col>
+          <van-col span="4">
+            <view class='operation' data-userid='{{item.openid}}' data-id='{{items._id}}' data-description='{{items.description}}' data-nickname='{{item.user.nickName}}' data-type='agree' bindtap="clickAgreeRefuse">
+              <text>同意</text>
+            </view>
+          </van-col>
+        </van-row>
+      </view>
+      </block>
+    </van-collapse-item>
+  </van-collapse>
+</view>
+</block>
+</view>
+<van-dialog id="van-dialog" />

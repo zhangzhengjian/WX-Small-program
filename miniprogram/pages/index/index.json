@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "card-com": "/component/card-com/card-com"
+  },
+  "navigationBarBackgroundColor": "#7122ef",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "首页",
+  "backgroundColor": "#5d13d3",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true
+}

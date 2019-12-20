@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-tabbar": "/miniprogram_npm/vant-weapp/tabbar/index",
+    "van-tabbar-item": "/miniprogram_npm/vant-weapp/tabbar-item/index",
+    "photo-com":"/component/photo-com/photo-com"
+  },
+  "navigationBarTitleText": "照片上传",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff"
+}

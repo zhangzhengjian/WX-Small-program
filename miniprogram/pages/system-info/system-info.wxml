@@ -1,0 +1,4 @@
+<!--pages/system-info/system-info.wxml-->
+<view class="empty" wx:if="{{ systemData.length == 0 }}">
+  <image mode="widthFix" src="../../images/zanwuricheng@3x.png"></image>
+</view>

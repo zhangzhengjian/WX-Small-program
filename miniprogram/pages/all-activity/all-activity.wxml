@@ -1,0 +1,18 @@
+<!--pages/all-activity/all-activity.wxml-->
+<view class="container">
+  <van-tabs sticky active="0" border="{{ false }}" swipeable="{{ true }}" bind:change="onChangeTabs">
+    <van-tab title="未提交"></van-tab>
+    <van-tab title="已结束"></van-tab>
+    <van-tab title="所有活动"></van-tab>
+  </van-tabs>
+</view>
+<view class="empty" wx:if="{{ formData.length == 0 }}">
+  <image mode="widthFix" src="../../images/zanwuricheng@3x.png"></image>
+</view>
+<view wx:else class='my_activity'>
+  <form-com prop-a="{{formData}}" bind:deleteSuccess="deleteSuccess" bind:deleteFail="deleteFail"></form-com>
+  <view wx:if="{{ !isLoad }}" class="load">
+    <text>数据已全部加载...</text>
+  </view>
+</view>
+<van-dialog id="van-dialog" />

@@ -1,0 +1,14 @@
+<!--pages/edit/edit.wxml-->
+<view class="textarea_box">
+  <textarea placeholder="请输入内容" value="{{ value }}" focus='{{ true }}' auto-height='{{ true }}' style="max-height:{{ maxHeight }}px" bindinput="onInput"></textarea>
+</view>
+<view class='footer'>
+  <van-row>
+    <van-col span="12">
+      <van-button class='gray' square size="large" bindtap="cancel">取消</van-button>
+    </van-col>
+    <van-col span="12">
+      <van-button class='blue_background' square size="large" bindtap='submit'>确定</van-button>
+    </van-col>
+  </van-row>
+</view>

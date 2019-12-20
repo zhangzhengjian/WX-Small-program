@@ -1,0 +1,26 @@
+<!--component/photo-com/photo-com.wxml-->
+<view class="photo-com">
+<van-row>
+  <block wx:for="{{ propA }}" wx:key="index">
+    <van-col wx:if="{{ item.type == 'photo' }}" class="photo" span="8">
+      <view class="image_box">
+        <image mode="aspectFill" src="{{ item.path }}"></image>
+        <van-icon class="delete" data-path="{{ item.path }}" bindtap="deleteImage" name="clear" />
+        <progress wx:if="{{ item.isUpLoad == 1 }}" percent="{{item.progress}}" stroke-width="6" />
+        <text wx:if="{{ item.isUpLoad == 2 }}" class="upLoad success">上传成功</text>
+        <text wx:if="{{ item.isUpLoad == 3 }}" class="upLoad fail">上传失败</text>
+      </view>
+    </van-col>
+    <van-col wx:else class="video" span="12">
+      <view class="video_box">
+        <video src="{{item.path}}" controls></video>
+        <van-icon class="delete" data-path="{{ item.path }}" bindtap="deleteImage" name="clear" />
+        <progress wx:if="{{ item.isUpLoad == 1 }}" percent="{{item.progress}}" stroke-width="6" />
+        <text wx:if="{{ item.isUpLoad == 2 }}" class="upLoad success">上传成功</text>
+        <text wx:if="{{ item.isUpLoad == 3 }}" class="upLoad fail">上传失败</text>
+      </view>
+    </van-col>
+    <van-col></van-col>
+  </block>
+</van-row>
+</view>

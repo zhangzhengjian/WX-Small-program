@@ -1,0 +1,38 @@
+<!--pages/manage/manage.wxml-->
+<!-- <text>pages/manage/manage.wxml</text> -->
+<view class='banner'>
+  <image class='banner_image' mode='widthFix' src='../../images/banner.png' style="max-height:{{ imageHeight }}px"></image>
+  <van-row>
+    <van-col span="6" data-type="add" bindtap="goPage">
+      <image mode='widthFix' src='../../images/add-activity.png'></image>
+      <text>新增</text>
+    </van-col>
+    <van-col span="6" data-type="wait-approve" bindtap="goPage">
+      <image mode='widthFix' src='../../images/approve.png'></image>
+      <text>我的报名</text>
+    </van-col>
+    <van-col span="6" data-type="sign" bindtap="goPage">
+      <image mode='widthFix' src='../../images/signup.png'></image>
+      <text>报名历史</text>
+    </van-col>
+    <van-col span="6" data-type="all" bindtap="goPage">
+      <image mode='widthFix' src='../../images/all-activity.png'></image>
+      <text>全部活动</text>
+    </van-col>
+  </van-row>
+</view>
+<view wx:if="{{ formData.length > 0 }}">
+  <view class="title">
+    <image src="../../images/star.png" />
+    <text>已发布</text>
+  </view>
+  <view style='margin:10px 10px 0'>
+    <scroll-view scroll-y="{{ true }}" bindscrolltolower="scrolltolower" style="height:{{ height }}px">
+      <form-com prop-a="{{formData}}" bind:deleteSuccess="deleteSuccess" bind:deleteFail="deleteFail"></form-com>
+      <view wx:if="{{ !isLoad }}" class="load">
+        <text>数据已全部加载...</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<van-dialog id="van-dialog" />

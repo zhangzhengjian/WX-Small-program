@@ -1,0 +1,51 @@
+/* pages/address/address.wxss */
+page{
+  background-color: rgb(252, 252, 252);
+}
+.address_box{
+  background-color: #fff;
+  line-height: 35px;
+  padding: 0 30rpx;
+  border-bottom: 1px solid #eee;
+}
+.address_title{
+  font-size: 14px;
+  color: #333;
+  width: 20%;
+  text-align: center;
+  float: left;
+}
+.address_field{
+  line-height: 35px;
+  font-size: 14px;
+  color: #333;
+  display: inline-block;
+  width: 80%;
+}
+.van-picker{
+  position: static !important;
+}
+.van-picker__toolbar{
+  position: absolute !important;
+  bottom: 0;
+  width: 100%;
+}
+.van-picker-column__item{
+  font-size: 14px;
+}
+.van-picker-column__item--selected{
+  color: #7122ef !important;
+  /* background-color: rgb(252, 252, 252); */
+}
+.van-picker__cancel{
+  color: rgb(165, 165, 165) !important;
+  border-right: 1px solid #eee;
+  width: 50%;
+  text-align: center;
+}
+.van-picker__confirm{
+ width: 50%;
+ text-align: center;
+ color: #fff !important;
+ background-color: #7122ef !important;
+}

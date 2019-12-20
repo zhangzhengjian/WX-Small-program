@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "card-com": "/component/card-com/card-com"
+  },
+  "navigationBarTitleText": "待审核",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff"
+}

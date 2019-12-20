@@ -1,0 +1,4 @@
+/* pages/setting/setting.wxss */
+.user_cell{
+  margin-top: 10px;
+}

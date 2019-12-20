@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "form-com": "/component/form-com/form-com"
+  },
+  "navigationBarTitleText": "活动管理",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff"
+}

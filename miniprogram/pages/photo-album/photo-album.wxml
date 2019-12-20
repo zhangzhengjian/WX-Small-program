@@ -1,0 +1,68 @@
+<!--pages/photo-album/photo-album.wxml-->
+<van-tabbar class="header" wx:if="{{ isUser }}" fixed="{{ false }}" border="{{ false }}" bind:change="onChange">
+  <van-tabbar-item icon="wap-home" bindtap="goPageHome">返回首页</van-tabbar-item>
+  <van-tabbar-item icon="setting-o" bindtap="selectShow">设置</van-tabbar-item>
+  <van-tabbar-item icon="upgrade" bindtap="goPageUpdate">上传照片</van-tabbar-item>
+  <van-tabbar-item icon="delete" bindtap="batchDelete">批量删除</van-tabbar-item>
+</van-tabbar>
+<view style="margin:30rpx 0 120rpx;">
+<block wx:for="{{ imagesData }}" wx:key="index" wx:for-item="items">
+<view>
+  <view class="images_title">
+  <text class="year">{{ items.year }}</text>年
+  <text class="month">{{ items.month }}</text>月
+  <text class="date">{{ items.date }}</text>日
+  </view>
+  <view class="images_content">
+  <van-row>
+    <block wx:for="{{ items.path }}" wx:key="index">
+     <van-col wx:if="{{ item.type == 'photo' }}" class="photo" span="8">
+      <view class="image_box">
+      <image mode="aspectFill" src="{{ item.path }}" data-path="{{ item.path }}" data-pathArr="{{ items.path }}" bindtap="previewImage" bindlongtap='selectImages'></image>
+      <view wx:if="{{ isSelect }}" class="image_select" data-path="{{ item.path }}" bindtap="clickSelect">
+      <van-icon wx:if="{{ item.isSign }}" class="select" color="#2298ef" name="checked" />
+      <van-icon wx:else class="no_select" color="#fff" name="circle" />
+      </view>
+      </view>
+     </van-col>
+     <van-col wx:else class="video" span="12">
+      <view class="video_box">
+      <video src="{{item.path}}" controls="{{ false }}" data-path="{{ item.path }}" bindtap="fullScreen" bindlongtap='selectImages'></video>
+      <view wx:if="{{ isSelect }}" class="image_select" data-path="{{ item.path }}" bindtap="clickSelect">
+      <van-icon wx:if="{{ item.isSign }}" class="select" color="#2298ef" name="checked" />
+      <van-icon wx:else class="no_select" color="#fff" name="circle" />
+      </view>
+      </view>
+     </van-col>
+   </block>
+  </van-row>
+  </view>
+</view>
+</block>
+</view>
+<view wx:if="{{ isSelect }}" class='footer'>
+  <view class="footer_box">
+  <van-row gutter="5">
+  <van-col span="8">
+  <view class='button_box'>
+    <van-button class="cencel" size="normal" bindtap='cancel'>取消</van-button>
+  </view>
+  </van-col>
+  <van-col span="16">
+  <view class='button_box'>
+    <van-button size="normal" bindtap='delete'>删除</van-button>
+  </view>
+  </van-col>
+  </van-row> 
+  </view>
+</view>
+<view wx:if="{{ isVideoMask }}" class="video_mask" catchtap="clickMask">
+  <view></view>
+  <video id="myvideo" autoplay="{{ true }}" src="{{videoPath}}" bindlongtap='showPopup' catchtap="bubbling"></video>
+</view>
+<van-popup show="{{ isPopup }}" round custom-style="padding:20rpx 0;" position="bottom" bind:close="onClose">
+<van-cell title="保存视频" value="{{ progress }}" clickable="{{ true }}" border="{{ false }}" bindtap="preserve" />
+</van-popup>
+<sex-select prop-a="{{ radioSelectShow }}" prop-b="{{ radioData }}" bind:onRadioSelect="onRadioSelect"></sex-select>
+<van-dialog id="van-dialog" />
+

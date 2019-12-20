@@ -1,0 +1,39 @@
+/* pages/information/information.wxss */
+.information_background{
+  background-color: #fff;
+}
+.information_box{
+  margin: 0 30rpx;
+}
+van-cell .custom_cell{
+  padding: 40rpx 0;
+  border-bottom: 1px solid #eee;
+}
+van-cell:nth-last-child(1) .custom_cell{
+  border-bottom: none;
+}
+van-cell .custom_cell image{
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 22rpx;
+}
+
+van-cell .custom_cell .van-cell-text{
+  margin-left: 100rpx;
+  display: inline-block;
+  font-size: 16px;
+  color: #666;
+}
+van-cell .custom_cell .van-cell-red{
+  font-size: 12px;
+  border-radius: 16px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  float: right;
+  margin-top: 4px;
+}

@@ -1,0 +1,77 @@
+/* component/follow-com/follow-com.wxss */
+.user_box{
+  padding: 8px 15px;
+  border-bottom: 1px solid #eee;
+}
+.user_box:nth-last-child(1){
+  border-bottom: none;
+}
+.user .userImage,.user .userInfo,.user .follow{
+  height: 50px;
+}
+.user .userImage image{
+  margin-top: 3px;
+  width: 44px;
+  height: 44px;
+  border-radius: 44px;
+}
+.user .userInfo .userName{
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  padding-top: 5px;
+}
+.user .follow text{
+  margin-top: 12px;
+  display: inline-block;
+  width: 100%;
+  min-width: 60rpx;
+  padding: 5rpx 0;
+  text-align: center;
+  border: 1px solid #2298ef;
+  border-radius: 50px;
+  font-size: 12px;
+  color: #2298ef;
+}
+
+/**标签**/
+.lable_box .lable{
+  font-size: 12px;
+  color: #fff;
+  padding: 2rpx 24rpx;
+  border-radius: 40px;
+  background-color: #2298ef;
+  margin: 0 10rpx;
+}
+.lable_box .sex{
+  display: inline-block;
+  position: relative;
+  height: 16px;
+  line-height: 16px;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 12px;
+  margin-right: 10rpx;
+  padding: 0 12rpx;
+}
+.lable_box .sex image{
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 3px;
+}
+.lable_box .sex text{
+  padding-left: 25rpx;
+  font-size: 12px;
+}
+
+.lable_box .lable:nth-child(2){
+  background-color: #b460e4;
+}
+.lable_box .lable:nth-child(3){
+  background-color: #e47f60;
+}
+.lable_box .lable:nth-child(4){
+  background-color: #76e460;
+}

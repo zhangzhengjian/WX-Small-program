@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "follow-com": "/component/follow-com/follow-com"
+  },
+  "navigationBarTitleText": "活动成员",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff"
+}

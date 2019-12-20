@@ -1,0 +1,83 @@
+<!--pages/personal-space/personal-space.wxml-->
+<view class='header'>
+  <view class='operation'>
+    <view class='operation_left' bindtap='backHome'>
+      <van-icon name="arrow-left" />
+      <text>首页</text>
+    </view>
+    <view class='operation_right' bindtap='clickPraise'>
+      <van-icon name="good-job" />
+      <text>{{ userInfoData.praise }}</text>
+    </view>
+  </view>
+  <view class='userInfo'>
+    <image class='head_portrait' mode="widthFix" src='{{ userInfoData.user.avatarUrl }}'></image>
+    <text class='name'>{{ userInfoData.user.nickName }}</text>
+    <view class='lable_box'>
+      <view class='sex' style="{{userInfoData.perject.sex == '1'? 'background-color:#2298ef':'background-color:#f870b4'}}">
+        <image mode="widthFix" src="{{ userInfoData.perject.sex == '1' ? '../../images/boy.png':'../../images/girl.png' }}"></image>
+        <text>{{ userInfoData.perject?userInfoData.perject.age+'岁':' 保密 ' }}</text>
+      </view>
+      <text class='lable'>{{ userInfoData.user.city }}</text>
+    </view>
+    <view class='follow'>
+      <text class='title'>关注：</text>
+      <text class='num'>{{ userInfoData.follow }}</text>
+    </view>
+  </view>
+</view>
+
+<view class='content'>
+  <view class='autograph info'>
+    <text class='title'>宣言</text>
+    <text class='text'>{{ userInfoData.perject.state }}</text>
+  </view>
+  <view class='album info'>
+    <text class='title'>Ta的相册</text>
+    <text class="button" wx:if="{{ !isButton }}" bindtap="goPageUpdate">上传照片</text>
+    <view wx:if="{{ isPrivate }}" class="private">
+      <text>主人已设为私密相册</text>
+    </view>
+    <view wx:else class="images_abbreviate" bindtap="goPageAlbum">
+      <scroll-view scroll-x="true" style="width: 100%;">
+        <view style="width:{{ scrollWidth }}rpx">
+        <block wx:for="{{ photoData }}" wx:key="index">
+          <view class="image_box" wx:if="{{ item.type == 'photo' }}">
+            <image mode="aspectFill" src="{{ item.path }}"></image>
+          </view>
+          <view class="video_box" wx:else>
+            <video src="{{item.path}}" controls="{{ false }}"></video>
+          </view>
+        </block>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class='contact info'>
+    <text class='title'>联系方式</text>
+    <view class='list'>
+      <image mode="widthFix" src='../../images/phone.png'></image>
+      <text>{{ userInfoData.perject.phone }}</text>
+      <view style='clear:both'></view>
+    </view>
+    <view class='list'>
+      <image mode="widthFix" src='../../images/wx.png'></image>
+      <text>{{ userInfoData.perject.weixin }}</text>
+      <view style='clear:both'></view>
+    </view>
+  </view>
+  <view class='lable info'>
+    <text class='title'>兴趣标签</text>
+    <view>
+      <block wx:for='{{ userInfoData.perject.lable }}' wx:key='index'>
+        <text class='text'>#{{ item }}</text>
+      </block>
+    </view>
+  </view>
+</view>
+<view class='footer'>
+  <view class='button_box' wx:if="{{ isButton }}">
+    <van-button size="normal" bindtap='signup'>{{userInfoData.isFollow ? '已关注':'关注'}}</van-button>
+  </view>
+</view>
+<van-dialog id="van-dialog" />

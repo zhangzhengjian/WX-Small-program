@@ -1,0 +1,190 @@
+/* pages/personal-space/personal-space.wxss */
+.header .operation{
+  height: 120px;
+  background-color: #7122ef;
+}
+.header .operation .operation_left,.header .operation .operation_right{
+  width: 74px;
+  background-color: #a167ff;
+  color: #fff;
+  line-height: 34px;
+  height: 34px;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 20rpx;
+  position: relative;
+}
+.header .operation .operation_left{
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  float: left;
+}
+.header .operation .operation_right{
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  float: right;
+}
+.header .operation van-icon{
+  position: absolute;
+  top: 2px;
+  left: 14px;
+}
+.header .operation text{
+  padding-left: 14px;
+}
+
+.header .userInfo{
+  margin: 0 30rpx;
+  height: 120px;
+  border: 1px solid rgb(71, 8, 122);
+  border-bottom: 3px solid rgb(71, 8, 122);
+  border-radius: 30rpx;
+  background-color: #fff;
+  margin-top: -60px;
+  text-align: center;
+  position: relative;
+}
+
+.header .userInfo .head_portrait{
+  width: 74px;
+  height: 74px;
+  border-radius: 74px;
+  border: 1px solid #fff;
+  position: absolute;
+  top: -37px;
+  left: 50%;
+  margin-left: -37px;
+  background-color: #fff;
+}
+.header .userInfo .name{
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-top: 46px;
+}
+
+.header .userInfo .follow .title{
+  font-size: 14px;
+  color: #888;
+}
+.header .userInfo .follow .num{
+  font-size: 14px;
+  color: #7122ef;
+  margin-top: 10rpx;
+}
+
+.content{
+  background-color: #fff;
+  padding: 10rpx 30rpx;
+  margin-top: 40rpx;
+  border-radius: 30rpx;
+  border-top: 1px solid rgb(71, 8, 122);
+  border-bottom: 3px solid rgb(71, 8, 122);
+  margin-bottom: 60px;
+}
+.content .info{
+  padding-bottom: 30rpx;
+  border-bottom: 1px dashed #eee;
+}
+.content .info:nth-last-child(1){
+  border-bottom: none;
+}
+.content .info .title{
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 40px;
+  color: rgb(39, 39, 39);
+}
+.content .info .button{
+  float: right;
+  font-size: 14px;
+  line-height: 40px;
+  color: #2298ef;
+}
+.content .autograph .text{
+  display: block;
+  font-size: 14px;
+  line-height: 26px;
+  color: #666;
+}
+.content .contact .list{
+  height: 20px;
+  margin-top: 20rpx;
+}
+.content .contact .list image{
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right: 30rpx;
+}
+.content .contact .list text{
+  font-size: 14px;
+  color: #666;
+  line-height: 20px;
+  float: left;
+}
+.content .lable .text{
+  font-size: 12px;
+  border-radius: 10rpx;
+  padding: 4rpx 16rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+  font-weight: bold;
+}
+.content .lable .text:nth-child(1){
+  border:1px solid #b460e4;
+  color: #b460e4;
+}
+.content .lable .text:nth-child(2){
+  border:1px solid #e47f60;
+  color: #e47f60;
+}
+.content .lable .text:nth-child(3){
+  border:1px solid #2298ef;
+  color: #2298ef;
+}
+.content .lable .text:nth-child(4){
+  border:1px solid #16e082;
+  color: #16e082;
+}
+.content .lable .text:nth-child(5){
+  border:1px solid #a43edf;
+  color: #a43edf;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+}
+.footer .button_box{
+  margin: 0 30rpx 20rpx 30rpx;
+}
+.footer van-button .van-button{
+  width: 100%;
+  background-color: #7122ef !important;
+  color: #fff;
+  border: none;
+}
+.private text{
+  font-size: 14px;
+  color: #999;
+  display: block;
+  background-color: rgb(247, 247, 247);
+  border-radius: 3px;
+  padding: 10px;
+}
+.images_abbreviate .image_box,.images_abbreviate .video_box{
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.images_abbreviate .image_box image{
+  width: 216rpx;
+  height: 216rpx;
+}
+.images_abbreviate .video_box video{
+  width: 280rpx;
+  height: 216rpx;
+}

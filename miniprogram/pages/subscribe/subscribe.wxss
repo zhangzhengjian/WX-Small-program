@@ -1,0 +1,39 @@
+/* pages/subscribe/subscribe.wxss */
+page{
+  background-color: #fff;
+}
+.success_image{
+  width: 100%;
+  text-align: center;
+  margin-top: 80px;
+}
+.success_image .text{
+  font-size: 16px;
+  color: #555;
+  display: block;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.success_image .title{
+  font-size: 12px;
+  color: #999;
+  display: block;
+  margin-top: 5px;
+}
+.subscribe{
+  padding: 20px;
+  margin-top: 40px;
+  text-align: center;
+}
+.subscribe .van-button{
+  background-color: #7122ef;
+  height: 46px;
+  line-height: 46px;
+}
+.subscribe .refuse{
+  display: block;
+  line-height: 40px;
+  font-size: 14px;
+  color: #777;
+  margin-top: 10px;
+}

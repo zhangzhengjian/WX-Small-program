@@ -1,0 +1,111 @@
+/* pages/examine/examine.wxss */
+.examine_card{
+  background-color: #fff;
+  margin: 15rpx 20rpx;
+  border-radius: 10rpx;
+  padding: 10rpx 20rpx;
+}
+.examine_card .header{
+  height: 36px;
+  position: relative;
+  margin: 7px 0;
+  background-color: rgb(250, 250, 250);
+  border-radius: 6rpx;
+}
+.examine_card .header image{
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 5px;
+  left: 3px;
+}
+.examine_card .header text{
+  color: #333;
+  font-size: 16px;
+  line-height: 36px;
+  margin-left: 30px;
+}
+.examine_card .title{
+ display: block;
+ line-height: 30px;
+ padding-top: 10rpx;
+ border-top: 1px dashed #eee;
+}
+.examine_card .content{
+  margin-top: 10rpx;
+}
+.examine_card .content .number{
+  float: left;
+  height: 30px;
+}
+.examine_card .number text:nth-child(1){
+  font-size: 14px;
+  color: #777;
+}
+.examine_card .number text:nth-child(2){
+  font-size: 14px;
+  color: #7123ef;
+}
+.examine_card .content .button{
+  float: right;
+  height: 30px;
+}
+.examine_card .content .button text{
+  color: #7123ef;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+.examine_card .van-cell{
+  padding: 10px 0px !important;
+}
+.examine_card .van-cell__value{
+  color: #7123ef !important;
+}
+.examine_card .van-collapse-item__content{
+  padding: 0 !important;
+}
+
+.user_box{
+  border-bottom: 1px solid #eee;
+  padding: 5px 0;
+}
+.user_box:nth-last-child(1){
+  border-bottom: none;
+}
+.user .userImage,.user .userInfo,.user .follow{
+  height: 50px;
+}
+.user .userImage image{
+  margin-top: 3px;
+  width: 44px;
+  height: 44px;
+  border-radius: 44px;
+}
+.user .userInfo .userName{
+  font-size: 14px;
+  color: #333;
+  display: block;
+  padding-top: 5px;
+}
+.user .operation{
+  text-align: right;
+}
+.user van-col:nth-last-child(2) .operation text{
+  border: 1px solid #ef6322;
+  color: #ef6322
+}
+.user van-col:nth-last-child(1) .operation text{
+  border: 1px solid #2298ef;
+  color: #2298ef
+}
+.user .operation text{
+  margin-top: 12px;
+  display: inline-block;
+  width: 80%;
+  min-width: 60rpx;
+  padding: 0;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 14px;
+}

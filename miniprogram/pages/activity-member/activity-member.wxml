@@ -1,0 +1,7 @@
+<!--pages/activity-member/activity-member.wxml-->
+<view style="background-color:#fff;margin-top:10px">
+  <follow-com prop-a="{{userInfoData}}"></follow-com>
+  <view wx:if="{{ !isLoad }}" class="load" style="margin-top:8px;">
+    <text>数据已全部加载...</text>
+  </view>
+</view>

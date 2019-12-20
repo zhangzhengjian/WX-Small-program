@@ -1,0 +1,65 @@
+<!--pages/user/user.wxml-->
+<view class='user_header'>
+  <view class='user_left' bindtap='personalSpace'>
+    <text class='user_brand'>个人空间</text>
+    <text class='user_detail'>查看</text>
+  </view>
+  <view class='user_center'>
+    <view wx:if="{{ !userInfo.user }}" bindtap="goPageLogin">
+    <view class='user_image'>
+      <image class="image" src='../../images/user.png'></image>
+    </view>
+    <view class="nick_name">
+    <text class='login'>点击登录</text>
+    </view>
+    </view>
+    <view wx:else>
+    <view class='user_image'>
+      <image class="image" src='{{ userInfo.user.avatarUrl }}'></image>
+    </view>
+    <view class="nick_name">
+    <text class='user_name'>{{ userInfo.user.nickName }}</text>
+    </view>
+    </view>
+    <!-- <text class='user_member'>普通会员</text> -->
+  </view>
+  <view class='user_right'>
+    <text class='user_title'>关注：<text>{{ userInfo.follow?userInfo.follow:0 }}</text></text>
+    <text class='user_title'>粉丝：<text>{{ fansNum }}</text></text>
+  </view>
+</view>
+<image class='background_user' mode="widthFix" style="max-height:20px" src='../../images/background_user.png'></image>
+<view class='user_order'>
+  <van-cell value-class="value_class" border="{{false}}" value="查看全部活动" icon="other-pay" is-link link-type="navigateTo" url="/pages/all-activity/all-activity">
+    <view slot="title">
+      <view class="van-cell-text">我的活动</view>
+    </view>
+  </van-cell>
+</view>
+<view class='user_cell'>
+  <van-cell value-class="value_class" border="{{false}}" value="" icon="coupon-o" is-link link-type="navigateTo" url="/pages/follow/follow">
+    <view slot="title">
+      <view class="van-cell-text">我的关注</view>
+    </view>
+  </van-cell>
+  <van-cell value-class="value_class" border="{{false}}" value="" icon="coupon-o" is-link link-type="navigateTo" url="/pages/userInfo/userInfo">
+    <view slot="title">
+      <view class="van-cell-text">编辑个人信息</view>
+    </view>
+  </van-cell>
+</view>
+<!-- <view class='user_cell'>
+  <van-cell value-class="value_class" border="{{false}}" value="" icon="cart-o" is-link>
+    <view slot="title">
+      <view class="van-cell-text">浏览足迹</view>
+    </view>
+  </van-cell>
+</view> -->
+<view class='user_cell'>
+  <van-cell value-class="value_class" border="{{false}}" value="系统设置" icon="setting-o" is-link url="/pages/setting/setting">
+    <view slot="title">
+      <view class="van-cell-text">设置</view>
+    </view>
+  </van-cell>
+</view>
+<van-dialog id="van-dialog" />

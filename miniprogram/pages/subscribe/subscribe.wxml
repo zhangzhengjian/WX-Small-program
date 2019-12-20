@@ -1,0 +1,9 @@
+<view class="success_image">
+  <icon type="success" size="60" color="#7122ef" />
+  <text class="text">{{ type }}</text>
+  <text class="title">{{ tips }}</text>
+</view>
+<view class="subscribe">
+  <van-button round size="large" type="info" bindtap="subscribe">{{ buttonText }}</van-button>
+  <text class="refuse" bindtap="refuse">不用了，谢谢!</text>
+</view>

@@ -1,0 +1,42 @@
+/* pages/manage/manage.wxss */
+.banner{
+  margin: 10px 10px;
+  border-radius: 13px;
+  background-color: #fff;
+}
+.banner .banner_image{
+  width: 100%;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+  margin-bottom: 10px;
+}
+van-row .van-row{
+  padding-bottom: 10px;
+}
+van-row van-col{
+  text-align: center;
+}
+van-row van-col image{
+  width: 50%;
+  height: 50%;
+}
+van-row van-col text{
+  display: block;
+  font-size: 12px;
+  color: #666;
+}
+.title{
+  height: 20px;
+  margin: 0 10px;
+}
+.title image{
+  width: 20px;
+  height: 20px;
+  float: left;
+}
+.title text{
+  color: #666;
+  font-size: 14px;
+  line-height: 20px;
+  float: left;
+}
